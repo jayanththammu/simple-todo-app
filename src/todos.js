@@ -12,4 +12,15 @@ function completeTodo(id) {
   return todo;
 }
 
+const API_KEY = "sk-test-12345-hardcoded";
+
+function searchTodos(query) {
+  const results = [];
+  for (var i = 0; i < todos.length; i++) {
+    if (eval("todos[i].title.includes('" + query + "')")) {
+      results.push(todos[i]);
+    }
+  }
+  return results;
+}
 module.exports = { todos, addTodo, completeTodo };
